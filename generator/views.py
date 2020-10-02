@@ -23,7 +23,13 @@ def password(request):
     length = int(request.GET.get('length',12))
 
     thepassword = ''
-    for x in range(length):
-        thepassword += random.choice(characters)
+    x = 0
+    while x < length:
+        charac = random.choice(characters)
+        if charac not in thepassword:
+            thepassword += charac
+            x += 1
+        else:
+            continue
 
     return render(request, 'generator/password.html', {'password':thepassword})
