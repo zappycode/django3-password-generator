@@ -1,28 +1,50 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<div class="container text-center">
-  <h1>Password Generator</h1>
-
-  <form action="{% url 'password' %}">
-    <select name="length">
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12" selected="selected">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-    </select> Length
-    <br>
-    <input type="checkbox" name="uppercase"> Uppercase
-    <br>
-    <input type="checkbox" name="numbers"> Numbers
-    <br>
-    <input type="checkbox" name="special"> Special Characters
-    <br>
-
-    <input type="submit" value="Generate Password" class="btn btn-primary">
-  </form>
-</div>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background: rgba(146,253,243,0.8);
+            background: linear-gradient(56deg,rgba(241,243,146,1) 0%, rgba(146,253,243,0.8) 81%);
+            background: -moz-linear-gradient(34deg,rgba(241,243,146,1) 0%, rgba(146,253,243,0.8) 81%);
+            background: -webkit-linear-gradient(34deg,rgba(241,243,146,1) 0%, rgba(146,253,243,0.8) 81%);
+            background: -o-linear-gradient(34deg,rgba(241,243,146,1) 0%, rgba(146,253,243,0.8) 81%);
+            background: -ms-linear-gradient(34deg,rgba(241,243,146,1) 0%, rgba(146,253,243,0.8) 81%);
+            filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr="rgba(241,243,146,1)", endColorstr="rgba(146,253,243,0.8)");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 1%;
+        }
+    </style>    
+    </head>
+    <body>
+        <div class="container text-center">
+          <h1 style="color: white">Password Generator</h1>
+        
+          <form action="{% url 'password' %}">
+        {#    <select name="length">#}
+        {#      <option value="6">6</option>#}
+        {#      <option value="7">7</option>#}
+        {#      <option value="8">8</option>#}
+        {#      <option value="9">9</option>#}
+        {#      <option value="10">10</option>#}
+        {#      <option value="11">11</option>#}
+        {#      <option value="12" selected="selected">12</option>#}
+        {#      <option value="13">13</option>#}
+        {#      <option value="14">14</option>#}
+        {#    </select> Length#}
+            <input type="number" max="72" value="1" name="length"> : Length
+            <br>
+            <input type="checkbox" name="uppercase"> Uppercase
+            <br>
+            <input type="checkbox" name="numbers"> Numbers
+            <br>
+            <input type="checkbox" name="special"> Special Characters
+            <br>
+        
+            <input type="submit" value="Generate Password" class="btn btn-primary">
+        
+            <p class="fixed-bottom">Upgraded by <a href="https://github.com/Amir10t/" target="_blank">Amir Talebi</a>
+          </form>
+        </div>
+    </body>
+</html>
